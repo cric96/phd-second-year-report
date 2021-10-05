@@ -4,10 +4,17 @@
 \usepackage{makecell}
 \usepackage[
 backend=biber,
-style=reading,
-citestyle=numeric,
-entrykey=false
+style=ieee,
+%citestyle=numeric,
+%entrykey=false,
+%annotation=false,
+url=false
 ]{biblatex}
+
+\renewbibmacro*{finentry}{%
+  \setunit{\finentrypunct\par}%
+	\usebibmacro{abstract}%\
+\finentry}
 \usepackage{textcomp}
 \usepackage{mathrsfs}  % mathscr font
 \usepackage{boxedminipage}
@@ -15,6 +22,9 @@ entrykey=false
 \usepackage{csquotes}
 %\usepackage{natbib}
 \usepackage[colorlinks, filecolor=dark_blue, urlcolor=dark_blue, linkcolor=black, citecolor=black]{hyperref}
+
+\defbibcheck{mine}{\iffieldequalstr{annotation}{mine}{}{\skipentry}}
+\defbibcheck{other}{\iffieldequalstr{annotation}{other}{}{\skipentry}}
 
 \addbibresource{biblio.bib}
 \begin{document}
@@ -25,8 +35,23 @@ entrykey=false
 \maketitle
 
 \section{Overall activity}
-My current research topic concerns engineering large scale multi-agent systems.
- In this first year, my activities are focused on the integration of field-based coordination paradigms 
+My current research topic concerns engineering large scale multi-agent systems. In particular, we are
+ focused on \textit{Cyber Physical Swarms}(CPS), a broad term that refers to a ``swarm" (like whom
+ existing in nature) of computational (simple) entities that, through emergent behaviour, reach goals collectively.  
+%
+Here, engineers have to deal with distributed control, huge nodes count, openness, highly stochastic environments.
+%
+So in literature, different solutions aim at handling this complexity but, we claim that Aggregate Computing is one of the most
+ prominent approach to ``program" collective behaviour for such a kind of system.
+%
+Indeed it enables the definition of self-organising collective behaviour through a distributed data manipulation called \textit{computational field}. In this way, the program specification is ``collectively" declare, so, theoretically,
+ can scale up at any system size.
+%
+Aggregate Computing is successfully applied in various scenarios, such as crowds of people, swarms of robots and smart cities.
+%
+Anyway, Aggregate Computing needs to widen both at the foundational level and at the "practical level".
+
+By the foundational level, In this first year, my activities are focused on the integration of field-based coordination paradigms 
  -- In particular Aggregate Computing -- with Machine Learning capability 
  in order to create even more intelligent collective behaviour.
 %
@@ -39,8 +64,8 @@ Furthermore, some behaviour works well only in specific contexts and when enviro
 %
 So we think that learning can lead to better collective behaviours, 
  improving our current state-of-the-art solutions, making Aggregate 
- Computing more and more applicable in real large scale systems.
-
+ Computing is more and more applicable in real large scale systems.
+%
 In the first part of my work, I tried to understand what 
  kind of machine learning algorithm is most suitable for Aggregate Computing.
 %
@@ -48,23 +73,26 @@ My works climax with \textit{\citetitle{research}} where I explain the different
  to enhance Aggregate Computing with Machine learning.
 %
 Finally, in the last period, I made concrete experiments with 
- Reinforcement Learning -- in particular Indipendent Q-Learning -- improving the current Aggregate Computing solution. 
+ Reinforcement Learning -- in particular Independent Q-Learning -- improving the current Aggregate Computing solution. 
  These works do not already be described in a publication,
- we count on doing this in few months
+ we count on doing this in few months.
 
-Another part of my research activities tackle directly Aggregate Computing to close the gap between
+Aside to ``Machine Learning'' integration, in \textit{\citetitle{collectiveautonomy}} we explore the relationship
+ between Aggregate Computing and agents autonomy. In particular, we investigate the position of Aggregate Computing 
+ w.r.t individual autonomy and the collective autonomy describing how we can selectively adjust" it. 
+
+Speaking about the "practical" level, my research activities aim at closing the gap between
  its abstract space and its application in concrete systems. 
 %
-In this direction, I made mainly contributions to ScaFi, 
- a research-oriented tool-chain that brings Aggregate Computing 
- into the Scala world. The works done consist in:
+In this direction, I made mainly contributions to ScaFi~\cite{scafi}, 
+ a research-oriented tool-chain that brings Aggregate Computing into the Scala world. The works are done consist in:
 
 \begin{itemize}
   \item \textit{\citetitle{scafiweb}}: 
-	 A playground to experiment with Aggregate Computing. In the long-term, these tools should be used in support of
+	A playground to experiment with Aggregate Computing. From a long-term perspective, this tool should be used in support of
   the distributed monitoring of Aggregate Computing application
   \item \textit{\citetitle{scafiloci}}: 
-	 An approach to deployment aggregate programs in different deployment kinds. These works have a long-term vision of separating functional aspects from non-functional aspects.
+	An approach for deploying aggregate programs in different networks. This work have a long-term vision of separating functional aspects from non-functional aspects.
 \end{itemize}
 
 \section{International Conferences Activities}
@@ -91,6 +119,8 @@ In this direction, I made mainly contributions to ScaFi,
 \end{table}
 
 \section{Pubblications}
-\nocite{*}
-\printbibliography[heading=none]
+\printbibliography[heading=none, check=mine]
+\section{References}
+\printbibliography[heading=none, check=other]
+
 \end{document}
