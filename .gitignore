@@ -16,3 +16,8 @@ _minted*/
 *.snm
 *.vrb
 build/
+*-blx.bib
+*.bcf
+*.fd*
+*.fls
+latex.run.xml

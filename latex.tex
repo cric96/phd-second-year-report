@@ -4,17 +4,13 @@
 \usepackage{makecell}
 \usepackage[
 backend=biber,
-style=ieee,
+style=alphabetic,
 %citestyle=numeric,
 %entrykey=false,
 %annotation=false,
 url=false
 ]{biblatex}
 
-\renewbibmacro*{finentry}{%
-  \setunit{\finentrypunct\par}%
-	\usebibmacro{abstract}%\
-\finentry}
 \usepackage{textcomp}
 \usepackage{mathrsfs}  % mathscr font
 \usepackage{boxedminipage}
@@ -27,12 +23,49 @@ url=false
 \defbibcheck{other}{\iffieldequalstr{annotation}{other}{}{\skipentry}}
 
 \addbibresource{biblio.bib}
+
 \begin{document}
 
-\title{PhD end-of-year report, I}
-\author{Gianluca Aguzzi, PhD student XXX cycle}
-\date{\today}
-\maketitle
+\begin{center}
+%% TODO MAKE RIGHT CYCLE
+	{{
+		\Large{
+			\textsc{PhD Programme in Computer Science and Engineering \\ Cycle XXXII}
+			}
+	}} 
+	\rule[0.1cm]{\textwidth}{0.1mm}
+	\rule[0.4cm]{\textwidth}{0.6mm}
+\end{center}
+
+\begin{center}
+	\vspace{8mm}
+	{\LARGE{PhD Year I -- Report}}
+\end{center}
+\vspace{8mm}
+\par
+\noindent
+\begin{minipage}[t]{0.47\textwidth}
+
+{\large{Commission: \\\bf
+Prof. Mirko Viroli \\
+Prof. Andrea Omicini \\
+Prof. Matteo Ferrara} 
+}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.47\textwidth}
+	\raggedleft
+	{
+		\large{PhD Student: \\\bf Gianluca Aguzzi }
+	}
+\end{minipage}
+\vspace{10mm}
+
+{
+	\raggedright
+	\rule[0.1cm]{\textwidth}{0.6mm}
+	\rule[0.5cm]{\textwidth}{0.1mm}
+}
 
 \section{Overall activity}
 My current research topic concerns engineering large scale multi-agent systems. In particular, we are
@@ -41,13 +74,13 @@ My current research topic concerns engineering large scale multi-agent systems. 
 %
 Here, engineers have to deal with distributed control, huge nodes count, openness, highly stochastic environments.
 %
-So in literature, different solutions aim at handling this complexity but, we claim that Aggregate Computing is one of the most
+So in literature, different solutions aim at handling this complexity but, we claim that~\textit{Aggregate Computing}~\cite{aggregatecomputing} is one of the most
  prominent approach to ``program" collective behaviour for such a kind of system.
 %
 Indeed it enables the definition of self-organising collective behaviour through a distributed data manipulation called \textit{computational field}. In this way, the program specification is ``collectively" declare, so, theoretically,
  can scale up at any system size.
 %
-Aggregate Computing is successfully applied in various scenarios, such as crowds of people, swarms of robots and smart cities.
+Aggregate Computing is successfully applied in various scenarios, such as crowds of people, swarms of robots and smart cities~\cite{processes}.
 %
 Anyway, Aggregate Computing needs to widen both at the foundational level and at the "practical level".
 
@@ -55,8 +88,8 @@ By the foundational level, In this first year, my activities are focused on the 
  -- In particular Aggregate Computing -- with Machine Learning capability 
  in order to create even more intelligent collective behaviour.
 %
-Indeed, even if Aggregate Computing has already been applied in various scenarios -- 
- such as crowds of people, swarms of robots and smart cities -- the behaviour specification can lead to
+Indeed, even if Aggregate Computing is already applied in various scenarios
+ the behaviour specification can lead to
  a complex fine-tuning guided sometimes by constant definition derived by domain experience.
 %
 Furthermore, some behaviour works well only in specific contexts and when environmental
@@ -64,7 +97,7 @@ Furthermore, some behaviour works well only in specific contexts and when enviro
 %
 So we think that learning can lead to better collective behaviours, 
  improving our current state-of-the-art solutions, making Aggregate 
- Computing is more and more applicable in real large scale systems.
+ Computing more and more applicable in real large scale systems.
 %
 In the first part of my work, I tried to understand what 
  kind of machine learning algorithm is most suitable for Aggregate Computing.
@@ -79,28 +112,32 @@ Finally, in the last period, I made concrete experiments with
 
 Aside to ``Machine Learning'' integration, in \textit{\citetitle{collectiveautonomy}} we explore the relationship
  between Aggregate Computing and agents autonomy. In particular, we investigate the position of Aggregate Computing 
- w.r.t individual autonomy and the collective autonomy describing how we can selectively adjust" it. 
+ w.r.t individual autonomy and the collective autonomy describing how we can selectively ``adjust" it. 
 
 Speaking about the "practical" level, my research activities aim at closing the gap between
  its abstract space and its application in concrete systems. 
 %
-In this direction, I made mainly contributions to ScaFi~\cite{scafi}, 
+In this direction, I made mainly contributions to ScaFi~\cite{scafi}\footnote{\url{https://github.com/scafi/scafi}}, 
  a research-oriented tool-chain that brings Aggregate Computing into the Scala world. The works are done consist in:
 
 \begin{itemize}
-  \item \textit{\citetitle{scafiweb}}: 
+  \item \textit{\citetitle{scafiweb}}\footnote{\url{https://github.com/scafi/scafi-web}}: 
 	A playground to experiment with Aggregate Computing. From a long-term perspective, this tool should be used in support of
   the distributed monitoring of Aggregate Computing application
   \item \textit{\citetitle{scafiloci}}: 
 	An approach for deploying aggregate programs in different networks. This work have a long-term vision of separating functional aspects from non-functional aspects.
 \end{itemize}
 
-\section{International Conferences Activities}
+\section{Talks}
 \begin{enumerate}
-	\item Talk at \href{https://www.discotec.org/2021/programme}{COORDINATION 2021} for \cite{scafiweb}
-	\item Talk at \href{https://apice.unibo.it/xwiki/bin/view/ECAS2021/Program}{eCAS 2021} for \cite{scafiloci}
-	\item Talk at \href{https://conf.researchr.org/program/acsos-2021/program-acsos-2021/?date=Fri%201%20Oct%202021}{ACSOS 2021 Doctoral Symposium} for \cite{research}
-	\item Artifact Evaluation Committee at \href{https://conf.researchr.org/committee/acsos-2021/acsos-2021-papers-artifact-evaluation-committee}{ACSOS 2021}
+	\item \citefield{scafiweb}{title} @ \href{https://www.discotec.org/2021/programme}{COORDINATION 2021}
+	\item \citefield{scafiloci}{title} @ \href{https://apice.unibo.it/xwiki/bin/view/ECAS2021/Program}{eCAS 2021}
+	\item \citefield{research}{title} @ \href{https://conf.researchr.org/program/acsos-2021/program-acsos-2021/?date=Fri%201%20Oct%202021}{ACSOS 2021 Doctoral Symposium}
+\end{enumerate}
+\section{International Conference Activities}
+\begin{enumerate}
+	\item Artifact Evaluation Committee @ \href{https://conf.researchr.org/committee/acsos-2021/acsos-2021-papers-artifact-evaluation-committee}{ACSOS 2021}
+
 \end{enumerate}
 \section{Courses and School}
 
@@ -118,8 +155,21 @@ In this direction, I made mainly contributions to ScaFi~\cite{scafi},
 	}
 \end{table}
 
-\section{Pubblications}
-\printbibliography[heading=none, check=mine]
+\section{Papers}
+\subsection{Published}
+\begin{itemize}
+	\item \fullcite{scafiweb}
+	\\{\footnotesize\textbf{Abstract:} \citefield{scafiweb}{abstract}}
+	\item \fullcite{collectiveautonomy}
+	\\{\footnotesize\textbf{Abstract:} \citefield{collectiveautonomy}{abstract}}
+\end{itemize}
+\subsection{Accepted}
+\begin{itemize}
+	\item \fullcite{scafiloci}
+	\\{\footnotesize\textbf{Abstract:} \citefield{scafiloci}{abstract}}
+	\item \fullcite{research}
+	\\{\footnotesize\textbf{Abstract:} \citefield{research}{abstract}}
+\end{itemize}
 \section{References}
 \printbibliography[heading=none, check=other]
 
