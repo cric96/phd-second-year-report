@@ -27,7 +27,6 @@ url=false
 \begin{document}
 
 \begin{center}
-%% TODO MAKE RIGHT CYCLE
 	{{
 		\Large{
 			\textsc{PhD Programme in Computer Science and Engineering \\ Cycle XXXVI}
@@ -38,8 +37,10 @@ url=false
 \end{center}
 
 \begin{center}
-	\vspace{8mm}
-	{\LARGE{PhD Year I -- Report}}
+	{\LARGE{Engineering Cyber Physical Swarms with Aggregate Computing}} \\
+	\vspace{4mm}
+	{\large{PhD Year I -- Report}} 
+	\vspace{4mm}
 \end{center}
 \vspace{8mm}
 \par
@@ -67,33 +68,46 @@ Prof. Matteo Ferrara}
 	\rule[0.5cm]{\textwidth}{0.1mm}
 }
 
+\newcommand{\rev}[1]{{\color{red}#1}}
 \section{Overall activity}
-My current research topic concerns engineering large scale multi-agent systems. In particular, I am
- focused on \textit{Cyber Physical Swarms}(CPS), a broad term that refers to a ``swarm" (like whom
+My current research topic concerns engineering large scale multi-agent systems \rev{leveraging 
+ oportunistically both of Aggregate Computing and Machine Learning approaches}.
+ In particular, I am focused on \textit{Cyber Physical Swarms} (CPS), 
+ a broad term that refers to a ``swarm" (like whom
  existing in nature) of computational (simple) entities in which different goals are 
- achieved collectively through emergent behaviours. 
+ achieved collectively through a \rev{global/system-wide behavioural specification}.
 %
 Engineers working in this field have to deal with distributed control, 
  huge nodes count, and highly stochastic environments.
-%
+
 So in literature, different solutions aim at handling this complexity.
  Among the many, \textit{Aggregate Computing}~\cite{aggregatecomputing} is one of the most
  prominent approaches to ``program" collective behaviour for such kind of systems.
 %
 Indeed it enables the definition of self-organising collective behaviour 
- through a distributed data manipulation called \textit{computational field}. 
- In this way, the program specification is ``collectively" declared, and so, theoretically,
- can scale up to any system size.
+ through a manipulation of a distributed data called \textit{computational field}.
+ In this way, the program specification is ``collectively" declared, \rev{abstracting over
+ underlying aspects -- such as network topology or communication protocol -- and making it 
+ applicable to any system size.}
+ %and so, theoretically, can scale up to any system size.
 %
-Aggregate Computing is successfully applied in various scenarios, 
- such as crowds of people, swarms of robots and smart cities~\cite{processes}.
-%
-Anyway, Aggregate Computing needs to be widened both 
- at the foundational level and at the ``architectural level".
-
+Aggregate Computing is proposed in various scenarios, 
+ such as \rev{crowds of people, smart cities, and large-scale IoT~\cite{processes}.}
+\rev{
+In my research project, we would like to extend 
+ Aggregate Computing in the field of CPS
+ which can be conceived as a modern version of the notion of swarm,
+ including  not  only swarm  of  robots  and  drones,
+ but  also  ``swarms"  of  IoT devices and swarms of
+ people with wearable devices in a real environment.
+ 
+Towards this direction, distributed intelligence, flexible middleware, and ad-hoc
+ building block need to be conceived, widening Aggregate Computing both
+ at the foundational level and at the ``architectural" level.
+}
 In order to explore the foundational level, in this first year, 
- my activities have been centred on the integration of field-based coordination paradigms 
- -- in particular Aggregate Computing -- with Machine Learning capability 
+ my activities have been centred on the integration of Aggregate Computing 
+ with Machine Learning capability 
  to create even more intelligent collective behaviour.
 %
 Indeed, even if Aggregate Computing is already applied in various scenarios,
@@ -111,11 +125,11 @@ Definitively we think that the exploitation of
 In the first part of my work, I tried to understand what 
  kind of machine learning algorithms is most suitable for Aggregate Computing.
 %
-My works climax with \textit{\citetitle{research}} where I explain the different suitable approach
+\rev{My work climaxes} with \textit{\citetitle{research}} where I explain the different suitable approach
  to enhance Aggregate Computing with Machine learning.
 %
 Finally, in the last period, I made concrete experiments with 
- Reinforcement Learning -- in particular Independent Q-Learning -- 
+ Reinforcement Learning -- in particular Q-Learning~\cite{watkins1992q} -- 
  improving the current Aggregate Computing solution. 
  These works are not described in a publication yet, but we plan to organise them in a paper in a 
  few months
@@ -125,7 +139,7 @@ Aside to ``Machine Learning'' integration, in \textit{\citetitle{collectiveauton
  we investigate the position of Aggregate Computing 
  w.r.t individual autonomy and the collective autonomy describing how we can selectively ``adjust" it. 
 
-Speaking about the ``architectural" level, my research activities aim at closing the reality gap between
+\rev{Concerning} the ``architectural" level, my research activities aim at closing the \rev{gap} between
  its abstract space and its application in concrete systems. 
 %
 In this direction, I made mainly contributions 
@@ -135,8 +149,10 @@ In this direction, I made mainly contributions
 
 \begin{itemize}
   \item \textit{\citetitle{scafiweb}}\footnote{\url{https://github.com/scafi/scafi-web}}: 
-	A playground to experiment with Aggregate Computing. From a long-term perspective, this tool should be used in support of
-  the distributed monitoring of Aggregate Computing application
+	A playground to experiment with Aggregate Computing. 
+	From a long-term perspective, this tool should be used to support our vision of ``hybrid" systems,
+	where a part of the ensemble is composed of simulated entities. 
+	Furthermore, ScaFi-web should be used in support for the distributed monitoring of Aggregate Computing application
   \item \textit{\citetitle{scafiloci}}: 
 	An approach for deploying aggregate programs in different networks. This work have a long-term vision of separating functional aspects from non-functional aspects.
 \end{itemize}
