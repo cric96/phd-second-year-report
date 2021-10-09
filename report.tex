@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 \usepackage{mgates-letter}
 \definecolor{dark_blue} {rgb}{0., 0., 0.65}
 \usepackage{makecell}
@@ -29,7 +29,9 @@ url=false
 \begin{center}
 	{{
 		\Large{
-			\textsc{PhD Programme in Computer Science and Engineering \\ Cycle XXXVI}
+			\textsc{PhD Programme in Computer Science and Engineering \\ 
+			\vspace{4mm}
+			Cycle XXXVI}
 			}
 	}} 
 	\rule[0.1cm]{\textwidth}{0.1mm}
@@ -37,7 +39,7 @@ url=false
 \end{center}
 
 \begin{center}
-	{\LARGE{Engineering Cyber Physical Swarms with Aggregate Computing}} \\
+	{\LARGE{Engineering Cyber-Physical Swarms with Aggregate Computing}} \\
 	\vspace{4mm}
 	{\large{PhD Year I -- Report}} 
 	\vspace{4mm}
@@ -57,7 +59,7 @@ Prof. Matteo Ferrara}
 \begin{minipage}[t]{0.47\textwidth}
 	\raggedleft
 	{
-		\large{PhD Student: \\\bf Gianluca Aguzzi }
+		\large{PhD Student: \\\bf Gianluca Aguzzi}
 	}
 \end{minipage}
 \vspace{10mm}
@@ -70,41 +72,77 @@ Prof. Matteo Ferrara}
 
 \newcommand{\rev}[1]{{\color{red}#1}}
 \section{Overall activity}
-My current research topic concerns engineering large scale multi-agent systems \rev{leveraging 
- oportunistically both of Aggregate Computing and Machine Learning approaches}.
- In particular, I am focused on \textit{Cyber Physical Swarms} (CPS), 
- a broad term that refers to a ``swarm" (like whom
- existing in nature) of computational (simple) entities in which different goals are 
- achieved collectively through a \rev{global/system-wide behavioural specification}.
-%
-Engineers working in this field have to deal with distributed control, 
- huge nodes count, and highly stochastic environments.
+% \rev{
+% 	My research topic concerns engineering large-scale multi-agent 
+% 	systems by improving current state-of-the-art algorithms, 
+% 	injecting machine learning to improve adaptivity, 
+% 	and advancing current distributed platforms to close the gap to real-world systems.
+% }
 
-So in literature, different solutions aim at handling this complexity.
- Among the many, \textit{Aggregate Computing}~\cite{aggregatecomputing} is one of the most
- prominent approaches to ``program" collective behaviour for such kind of systems.
+%  In particular, I am focused on \textit{Cyber-Physical Swarms} (CPS), 
+%  a broad term that refers to a ``swarm" (like whom
+%  existing in nature) of computational (simple) entities in which different goals are 
+%  achieved collectively.
+%  %through a \rev{global/system-wide behavioural specification}
+% %
+% Engineers working in this field have to deal with distributed control, 
+%  huge nodes count, and highly stochastic environments.
+
+% So in literature, different solutions aim at handling this complexity.
+%  Among the many, \textit{Aggregate Computing}~\cite{aggregatecomputing} is one of the most
+%  prominent approaches to ``program" collective behaviour for such kinds of systems.
+%
+\rev{
+In my research project, I have to deal with Cyber-Physical Swarm (CPS), 
+ which are highly complex systems -- conceptually inspired by natural swarms -- 
+ where a hoard of (simple) entities reach collective goals through self-organising behaviours.
+%
+Swarm robotics, ``swarms" of people (crowd) or, in general, ``swarms" of IoT devices are clearly defined applications of CPS.
+
+Cyber-Physical Swarms are spatially tied (each entity belonging to the system has an effect on the other entities in the same environment), 
+ they have no fixed size (possibly very large), 
+ they are composed of entities that have partial observability of the environment and 
+ they exist in stochastic environments.
+%
+Furthermore, these systems are collocated in the modern IT scenario, and so we have to cope with complex and layered networks.
+%
+Nowadays, researchers are trying to handle these properties by working on the construction of robust self-adaptive collective behaviour -- 
+ like the one observed in a natural environment, so failure-resistant, efficient, and effective. 
+%
+For years, the behaviours synthesis has been guided by natural phenomena observation that was then transposed into computer systems --- a so-called bottom-up approach. 
+ However, this trend led to specific solutions that hardly scale up with application complexity.
+
+So my research goal is to engineer CPS, 
+ namely, find a systematic methodology for synthesis and deploy self-organising behaviours in these systems. 
+ It is a broad-spectrum goal and it concerns the improvement of both foundational aspects of the current state-of-the-art paradigms, 
+ and the infrastructural level to apply research results into concrete systems. 
+ Finally, for us  Machine Learning acts as an adjunct between these levels, to push toward robust systems that can adapt to unforeseen situations.
+
+About the state-of-the-art paradigms,} \textit{Aggregate Computing}~\cite{aggregatecomputing} is one of the most prominent approaches to ``program" such kinds of systems.
 %
 Indeed it enables the definition of self-organising collective behaviour 
- through a manipulation of a distributed data called \textit{computational field}.
- In this way, the program specification is ``collectively" declared, \rev{abstracting over
- underlying aspects -- such as network topology or communication protocol -- and making it 
- applicable to any system size.}
+ through manipulation of a distributed data structure called \textit{computational field}.
+%
+ In this way, the program specification is ``collectively" declared, \rev{abstracting over underlying aspects -- 
+ such as network topology or communication protocol -- 
+ and making it applicable to any system size.}
  %and so, theoretically, can scale up to any system size.
 %
 Aggregate Computing is proposed in various scenarios, 
  such as \rev{crowds of people, smart cities, and large-scale IoT~\cite{processes}.}
 \rev{
 In my research project, we would like to extend 
- Aggregate Computing in the field of CPS
- which can be conceived as a modern version of the notion of swarm,
- including  not  only swarm  of  robots  and  drones,
- but  also  ``swarms"  of  IoT devices and swarms of
- people with wearable devices in a real environment.
+ Aggregate Computing in the field of CPSs.
+%  The latter can be characterised as a modern version of the notion of a swarm,
+%  including a not  only swarm  of  robots  and  drones,
+%  but  also  ``swarms"  of  IoT devices and ``swarms" of
+%  people with wearable devices in a real environment.
  
-Towards this direction, distributed intelligence, flexible middleware, and ad-hoc
- building block need to be conceived, widening Aggregate Computing both
+Towards this direction, distributed intelligence, flexible middlewares, and ad-hoc
+ building blocks need to be conceived, widening Aggregate Computing both
  at the foundational level and at the ``architectural" level.
 }
+
 In order to explore the foundational level, in this first year, 
  my activities have been centred on the integration of Aggregate Computing 
  with Machine Learning capability 
@@ -120,24 +158,24 @@ Furthermore, some behaviours work properly only in specific contexts and when en
 Definitively we think that the exploitation of 
  learning can lead to more complete collective behaviours, 
  improving our current state-of-the-art solutions, making Aggregate 
- Computing more and more applicable in real large scale systems.
+ Computing more and more applicable in real large scale systems
+ and \rev{helping the automatic synthesis of self-organising behaviours.}
 
 In the first part of my work, I tried to understand what 
  kind of machine learning algorithms is most suitable for Aggregate Computing.
 %
-\rev{My work climaxes} with \textit{\citetitle{research}} where I explain the different suitable approach
+\rev{My work climaxes} with \textit{\citetitle{research}} where I explain different suitable approaches
  to enhance Aggregate Computing with Machine learning.
 %
 Finally, in the last period, I made concrete experiments with 
  Reinforcement Learning -- in particular Q-Learning~\cite{watkins1992q} -- 
- improving the current Aggregate Computing solution. 
+ improving the current Aggregate Computing solutions. 
  These works are not described in a publication yet, but we plan to organise them in a paper in a 
- few months
+ few months.
 
-Aside to ``Machine Learning'' integration, in \textit{\citetitle{collectiveautonomy}} 
+Aside from ``Machine Learning'' integration, in \textit{\citetitle{collectiveautonomy}} 
  we explore the relationship between Aggregate Computing and agents autonomy. In particular, 
- we investigate the position of Aggregate Computing 
- w.r.t individual autonomy and the collective autonomy describing how we can selectively ``adjust" it. 
+ we investigate the position of Aggregate Computing w.r.t individual autonomy and the collective autonomy describing how we can selectively ``adjust" it. 
 
 \rev{Concerning} the ``architectural" level, my research activities aim at closing the \rev{gap} between
  its abstract space and its application in concrete systems. 
@@ -152,9 +190,10 @@ In this direction, I made mainly contributions
 	A playground to experiment with Aggregate Computing. 
 	From a long-term perspective, this tool should be used to support our vision of ``hybrid" systems,
 	where a part of the ensemble is composed of simulated entities. 
-	Furthermore, ScaFi-web should be used in support for the distributed monitoring of Aggregate Computing application
+	Furthermore, ScaFi-web should be used in support of the distributed monitoring for Aggregate Computing applications.
   \item \textit{\citetitle{scafiloci}}: 
-	An approach for deploying aggregate programs in different networks. This work have a long-term vision of separating functional aspects from non-functional aspects.
+	An approach for deploying aggregate programs in different networks topologies. 
+	This work has a long-term vision of separating functional aspects from non-functional aspects.
 \end{itemize}
 
 \section{Talks}
