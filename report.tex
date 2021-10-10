@@ -25,7 +25,7 @@ url=false
 \addbibresource{biblio.bib}
 
 \begin{document}
-
+\sloppy
 \begin{center}
 	{{
 		\Large{
@@ -70,7 +70,10 @@ Prof. Matteo Ferrara}
 	\rule[0.5cm]{\textwidth}{0.1mm}
 }
 
-\newcommand{\rev}[1]{{\color{red}#1}}
+\newcommand{\rev}[1]{{
+	%\color{red}
+	#1
+	}}
 \section{Background}
 % \rev{
 % 	My research topic concerns engineering large-scale multi-agent 
@@ -93,30 +96,30 @@ Prof. Matteo Ferrara}
 %  prominent approaches to ``program" collective behaviour for such kinds of systems.
 %
 \rev{
-In my research project, I have to deal with Cyber-Physical Swarm (CPS), 
+In my research project, I deal with Cyber-Physical Swarm (CPS), 
  which are highly complex systems -- conceptually inspired by natural swarms -- 
  where a hoard of (simple) entities reach collective goals through self-organising behaviours.
 %
 Swarm robotics, ``swarms" of people (crowd) or, in general, ``swarms" of IoT devices are clearly defined applications of CPS.
 
-Cyber-Physical Swarms are spatially tied (each entity belonging to the system has an effect on the other entities in the same environment), 
- they have no fixed size (possibly very large), 
- they are composed of entities that have partial observability of the environment and 
- they exist in stochastic environments.
+These systems exist in stochastic environments and they have no fixed size (possibly very large).
 %
-Furthermore, these systems are collocated in the modern IT scenario, and so we have to cope with complex and layered networks.
-%
+Futhermore they are composed of entities that have partial observability of the system, 
+ and that influence the environment to which they belong.
+ %
+Moreover, these systems are collocated in the modern IT scenario, and so we have to cope with complex and layered networks.
+
 Nowadays, researchers are trying to handle these properties by working on the construction of robust self-adaptive collective behaviour -- 
- like the one observed in a natural environment, so failure-resistant, efficient, and effective. 
+ like the one observed in a natural environment, and so failure-resistant, efficient, and effective. 
 %
 For years, the behaviours synthesis has been guided by natural phenomena observation that was then transposed into computer systems --- a so-called bottom-up approach. 
  However, this trend led to specific solutions that hardly scale up with application complexity.
 
 So my research goal is to engineer CPS, 
- namely, find a systematic methodology for synthesis and deploy self-organising behaviours in these systems. 
+ namely, find a systematic methodology to synthesise and deploy self-organising behaviours. 
  It is a broad-spectrum goal and it concerns the improvement of both foundational aspects of the current state-of-the-art paradigms, 
  and the infrastructural level to apply research results into concrete systems. 
- Finally, for us  Machine Learning acts as an adjunct between these levels, to push toward robust systems that can adapt to unforeseen situations.
+ Finally, for us, Machine Learning acts as an adjunct between these levels to push toward robust systems that can adapt to unforeseen situations.
 
 About the state-of-the-art paradigms,} \textit{Aggregate Computing}~\cite{aggregatecomputing} is one of the most prominent approaches to ``program" such kinds of systems.
 %
@@ -130,15 +133,15 @@ Indeed it enables the definition of self-organising collective behaviour
 %
 Aggregate Computing is proposed in various scenarios, 
  such as \rev{crowds of people, smart cities, and large-scale IoT~\cite{processes}.}
-\rev{
+
+ \rev{
 In my research project, we would like to extend 
  Aggregate Computing in the field of CPSs.
 %  The latter can be characterised as a modern version of the notion of a swarm,
 %  including a not  only swarm  of  robots  and  drones,
 %  but  also  ``swarms"  of  IoT devices and ``swarms" of
-%  people with wearable devices in a real environment.
- 
-Towards this direction, distributed intelligence, flexible middlewares, and ad-hoc
+%  people with wearable devices in a real environment. 
+To move towards this direction, distributed intelligence, flexible middlewares, and ad-hoc
  building blocks need to be conceived, widening Aggregate Computing both
  at the foundational level and at the ``architectural" level.
 }
