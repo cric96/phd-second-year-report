@@ -6,6 +6,8 @@
 backend=biber,
 style=numeric,
 citestyle=numeric,
+maxcitenames=10,
+maxnames=10,
 %entrykey=false,
 %annotation=false,
 url=false
@@ -150,7 +152,7 @@ In the following, I will describe each of the main papers that I carried on
  and I briefly summarize the main activities of my period abroad.
 \subsection{Activities}
 \begin{itemize}
-	\item in \textit{\citefield{roadmap}{title}} I have drafted 
+	\item in \textit{\citefield{roadmap}{title}}~\cite{roadmap} I have drafted 
  a roadmap highlighting the possible directions to follow to combine Aggregate Computing with Machine Learning.
 %
 In the article, I present the main directions of this integration (Figure 1), which are:
@@ -188,25 +190,25 @@ In the article, I present the main directions of this integration (Figure 1), wh
 	 for an aggregate application.
 \end{itemize}
 \item Concerning the integration of learning in aggregate programming, the work 
- entitled \textit{\citefield{aguzzi2022towards}{title}} 
+ entitled \textit{\citefield{aguzzi2022towards}{title}}~\cite{aguzzi2022towards} 
  discusses the use of RL as a way to learn pieces of code 
  that may be sensitive to environmental conditions. 
 In this work, I was inspired by program sketching 
  and I use a version of Q-learning~\cite{watkins1992q} for multi-agent systems (Hysteric Q-Learning~\cite{matignon2007hysteretic})
  to handle the complex interaction between the nodes. 
  
-\item In \textit{\citefield{rl-middleware}{title}}, 
+\item In \textit{\citefield{rl-middleware}{title}}~\cite{rl-middleware}, 
  I used RL to learn scheduling policies 
  in order to optimize consumption 
  while maintaining good responsiveness w.r.t. the collective behaviour.  
-This work can be seen as an extension of the \textit{\citefield{zambonelli2021time}{title}} 
+This work can be seen as an extension of \textit{\citefield{zambonelli2021time}{title}}~\cite{zambonelli2021time} 
  in which AC itself is used to define scheduling policies. 
 With our approach, it is possible 
  to learn online the policy that can 
  maximize energy savings while maintaining low consumption.
 
 %
-\item In \textit{\citefield{swarm-clustering}{title}} 
+\item In \textit{\citefield{swarm-clustering}{title}}~\cite{swarm-clustering}
  I explored a new clustering technique to track space-time evolving phenomena. 
 % 
 These clusters can then be used at the application level to perform 
@@ -216,7 +218,7 @@ Our approach, unlike standard approaches found in literature,
  aggregate processes -- abstraction introduced in Aggregate Computing 
  that allows concurrent collective computations.
 
-\item \textit{\citefield{domains}{title}} considers a design abstraction used to
+\item \textit{\citefield{domains}{title}}~\cite{domains} considers a design abstraction used to
  devise complex decentralized computation in complex collective ecosystems.
 %
 The main abstraction, called \textit{dynamic decentralization domains}, is used to
@@ -225,12 +227,12 @@ The main abstraction, called \textit{dynamic decentralization domains}, is used 
 %
 In the paper, I also show the implementation of that abstraction using Scala.
 
-\item For what concern the engineering methodologies, in \textit{\citefield{engineering}{title}}
+\item For what concern the engineering methodologies, in \textit{\citefield{engineering}{title}}~\cite{engineering}
  I examine the issues of engineering aggregate systems, outlining a research roadmap that exemplifies
  how the automation and methodological approach could improve the current
  trial-and-error approach.
 %
-\item in \textit{\citefield{scafi-paper}{title}}, I describe ScaFi, 
+\item in \textit{\citefield{scafi-paper}{title}}~\cite{scafi-paper}, I describe ScaFi, 
  a toolkit used for Aggregate Computing written in Scala.
 ScaFi is not new, in fact, I am one of the main contributors to the software and I am the lead designer of
  ScaFi Web~\cite{aguzzi2021scafi} --- A playground used to try Aggregate Computing online.
