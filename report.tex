@@ -4,8 +4,8 @@
 \usepackage{makecell}
 \usepackage[
 backend=biber,
-style=alphabetic,
-%citestyle=numeric,
+style=numeric,
+citestyle=numeric,
 %entrykey=false,
 %annotation=false,
 url=false
@@ -75,16 +75,16 @@ Prof. Matteo Ferrara}
 	#1
 	}}
 \section{Introduction}
-In the last decades, several research topics, such as pervasive~\cite{pervasive}, 
- ubiquitous~\cite{weiser1999computer}, collective~\cite{abowd2016beyond}, everyware~\cite{greenfield2010everyware} computing, 
+In the last decades several research topics such as pervasive~\cite{pervasive},
+ ubiquitous~\cite{weiser1999computer}, collective~\cite{abowd2016beyond}, everyware~\cite{greenfield2010everyware} computing 
  foster a vision in which thousands of computational devices, 
  ranging from smartphones, personal computers, and embedded devices,
- collaborate which each other to build complex applications.
+ collaborate to build complex applications.
 %
 Given this context, in my research, I call these large-scale multi-agent systems \textit{Cyber-Physical Swarms} (CPSWs).
 %
-The name came from natural inspiration, since this large ensemble of computational devices, 
- from a global perspective, could be seen as a ``swarm'' of simple entities that, with complex interactions, 
+The name come from natural inspiration, since this large ensemble of computational devices, 
+ from a global perspective, could be seen as a ``swarm'' of simple entities that, through complex interactions, 
  perform complicated collective tasks.
 %
 Moreover, the entities are \textit{cyber-physical} since they have an \textit{embodiment} in the environment, 
@@ -94,8 +94,8 @@ This vision embraces several kinds of systems, such as
  swarm robotics, ``swarms'' of people (crowds) or, in general, ``swarms'' of IoT devices.
 
 Designing applications for CPSWs is demanding for several reasons, just to mention some:
- i) the environment in which entities belong is highly unpredictable,
- ii) the collective behaviour could have long unstable transient, and
+ i) the environment to which entities belong is highly unpredictable,
+ ii) the collective behaviour could have long unstable transients, and
  iii) there is no central authority that coordinates the agents. 
 %
 Nowadays, researchers are trying to handle these challenges by working 
@@ -105,28 +105,28 @@ Nowadays, researchers are trying to handle these challenges by working
 Then, as main research goal of my PhD, I want to find a systematic methodology (models, techniques and algorithms) 
  to synthesise and deploy self-organising behaviours of predictable outcomes for CPSW.
 %
-In particular, I follow a language-based approach, where the models and tools are built around
+In particular, I follow a language-based approach, where models and tools are built around
  a target programming language.
 %
 In my research, 
  I mainly leverage Aggregate Computing (AC)~\cite{beal2015aggregate} ---a novel top-down global-to-local programming model. 
 %
-I choose this language since the abstractions that it exposes, 
+I choose this language since the abstractions that it exposes
  make the development of collective application in the CPSWs scenario easier:
  the entire collective behaviour is seen as an evolution of \textit{computational fields},
  that could be manipulated with a functional and declarative approach.
 %
 Even if AC is already applied in several use cases, 
- there is a need to both explore new research directions and
+ there is the need to both explore new research directions and
  to improve the current state-of-the-art solutions in order to close the reality gap, 
  making it possible to use AC in modern distributed applications.
 %
 In this second year then, 
- I make works in this direction, 
+ I carried on research in this context, 
  both exploring new distributed algorithms and devising the research area 
  --- i.e., integrating Reinforcement Learning (RL) with AC framework. 
 
-\section{Activities}
+\section{Research}
 \begin{figure}
 	\includegraphics[width=\textwidth]{roadmap.pdf}
 	\caption{
@@ -143,13 +143,19 @@ This integration has several benefits,
  including improving the adaptivity of aggregate systems, 
  and separating functional specifications (i.e., aggregate code) from non-functional ones (e.g., consumption, convergence times, ...).
 %
-As a first work, in \textit{\citefield{roadmap}{title}} I have drafted 
- a roadmap in which I discuss possible directions in which 
- aggregate computing and machine learning can be combined. 
+In parallel to these works related to the combination of AC and RL, 
+ I have also explored the development of algorithms/patterns/methodologies 
+ that can be applied in the context of CPWs.
+In the following, I will describe each of the main papers that I carried on
+ and I briefly summarize the main activities of my period abroad.
+\subsection{Activities}
+\begin{itemize}
+	\item in \textit{\citefield{roadmap}{title}} I have drafted 
+ a roadmap highlighting the possible directions to follow to combine Aggregate Computing with Machine Learning.
 %
 In the article, I present the main directions of this integration (Figure 1), which are:
 \begin{itemize}
-	\item Learning aggregate programs/algorithms: designing efficient and versatile AC algorithms can be complex, 
+	\item learning aggregate programs/algorithms: designing efficient and versatile AC algorithms can be complex, 
 	therefore, it is interesting to explore whether algorithms can be learnt or synthesised given high-level functional goals.
 	
 	\item Learning execution strategy: for a given AC program or algorithm, 
@@ -171,44 +177,37 @@ In the article, I present the main directions of this integration (Figure 1), wh
 	 learn how to efficiently execute algorithms according 
 	 to a set of given high-level objectives.
 	
-	\item Learning aggregate computing deployments: a logical AC system consists of a logical network of
+	\item Learning Aggregate Computing deployments: a logical AC system consists of a logical network of
 	 logical devices operating following a specified execution protocol. 
 	As shown in recent work on pulverised architectures~\cite{Casadei2020}, 
 	 it turns out that different application partitioning schemas and implementations of the digital thread associated 
 	 with the aggregate system are possible, 
 	 as well as different deployments of application components onto the available Information-Communication Technology (ICT) infrastructure. 
 	In this context, ML could be injected to have 
-	 the system learns by itself what is a (locally) optimal deployment 
+	 the system learns itself what is a (locally) optimal deployment 
 	 for an aggregate application.
 \end{itemize}
-Till now, I have focused mainly on improving 
- the definition of aggregate programs with reinforcement learning 
- and enhancing collective scheduling policies.
-%
-Concerning the integration of learning in aggregate programming, the work 
+\item Concerning the integration of learning in aggregate programming, the work 
  entitled \textit{\citefield{aguzzi2022towards}{title}} 
  discusses the use of RL as a way to learn pieces of code 
  that may be sensitive to environmental conditions. 
-In this work, we were inspired by program sketching 
- and we use a version of Q-learning~\cite{watkins1992q} for multi-agent systems (Hysteric Q-Learning~\cite{matignon2007hysteretic})
+In this work, I was inspired by program sketching 
+ and I use a version of Q-learning~\cite{watkins1992q} for multi-agent systems (Hysteric Q-Learning~\cite{matignon2007hysteretic})
  to handle the complex interaction between the nodes. 
  
-In \textit{\citefield{rl-middleware}{title}} instead, 
- we used RL to learn scheduling policies 
+\item In \textit{\citefield{rl-middleware}{title}}, 
+ I used RL to learn scheduling policies 
  in order to optimize consumption 
  while maintaining good responsiveness w.r.t. the collective behaviour.  
-This work can be seen as an extension of the one \textit{\citefield{zambonelli2021time}{title}} 
+This work can be seen as an extension of the \textit{\citefield{zambonelli2021time}{title}} 
  in which AC itself is used to define scheduling policies. 
 With our approach, it is possible 
  to learn online the policy that can 
  maximize energy savings while maintaining low consumption.
 
-In parallel to these works related to the combination of AC and RL, 
- I have also explored the development of algorithms/patterns/methodologies 
- that can be applied in the context of CPWs.
 %
-In the \textit{\citefield{swarm-clustering}{title}} 
- we explored a new clustering technique to track space-time evolving phenomena. 
+\item In \textit{\citefield{swarm-clustering}{title}} 
+ I explored a new clustering technique to track space-time evolving phenomena. 
 % 
 These clusters can then be used at the application level to perform 
  distributed decision-making and/or create related cluster-wise synthesise information.
@@ -217,58 +216,58 @@ Our approach, unlike standard approaches found in literature,
  aggregate processes -- abstraction introduced in Aggregate Computing 
  that allows concurrent collective computations.
 
-\textit{\citefield{domains}{title}} considers a design abstraction used to
+\item \textit{\citefield{domains}{title}} considers a design abstraction used to
  devise complex decentralized computation in complex collective ecosystems.
 %
 The main abstraction, called \textit{dynamic decentralization domains}, is used to
  create a region in space that opportunistically will be formed to support distributed 
  sensing and acting.
 %
-In the paper, we also show the implementation of that abstraction using Scala.
+In the paper, I also show the implementation of that abstraction using Scala.
 
-For what concern the engineering methodologies, in \textit{\cite{engineering}{title}}
- we examine the issues of engineering aggregate systems, outlining then a research roadmap that exemplifies
+\item For what concern the engineering methodologies, in \textit{\citefield{engineering}{title}}
+ I examine the issues of engineering aggregate systems, outlining a research roadmap that exemplifies
  how the automation and methodological approach could improve the current
  trial-and-error approach.
 %
-Finally, in \textit{\citefield{scafi-paper}{title}}, we describe ScaFi, 
+\item in \textit{\citefield{scafi-paper}{title}}, I describe ScaFi, 
  a toolkit used for Aggregate Computing written in Scala.
-ScaFi is not new, in fact I am one of the main contributors to the software and I am the lead designer of
+ScaFi is not new, in fact, I am one of the main contributors to the software and I am the lead designer of
  ScaFi Web~\cite{aguzzi2021scafi} --- A playground used to try Aggregate Computing online.
-We made this article then, to make ScaFi more accessible to a broad scientific community, 
+We made this article to make ScaFi more accessible to a broad scientific community, 
  since, currently, it is still not vastly applied in the community of collective systems.
-
+\end{itemize}
 \subsection{Period Abroad}
 In August, I started my period abroad 
  at Aarhus University under the supervision of Lukas Esterle.
 %
 During this period, I was mainly interested in applying Graph Neural Networks (GNNs)~\cite{scarselli2008graph}
- -- A neural network that works on graphs -- 
+ -- a neural network that works on graphs -- 
  with Aggregate Computing programs.
 %
 In particular, I used GNN to forecast 
  the state of natural phenomena tracked by agents of an aggregate system, and then, 
- using Aggregate Programming, we would like to coordinate the agent in a way 
+ using Aggregate Programming, I would like to coordinate the agent in a way 
  that they could follow the phenomena of interest.
 %
-In doing this, we applied a Centralised Training and Decentralised Execution (CTDE)~\cite{foerster2018deep} approach. 
+In doing this, I applied a Centralised Training and Decentralised Execution (CTDE)~\cite{foerster2018deep} approach. 
 %
-In this way, the learning local features using global data, 
- and then we can ``break'' the neural architecture in each node of the system.
+In this way, the local features are learnt using global data, 
+ and then the neural architecture can be broken down to each node of the system.
 %
-This could be done since GNN can be also understood as a local application of matrix multiplication.
+This could be done since GNN can be also seen as a local application of matrix multiplication.
 %
 This integration has a broader impact on the research of Aggregate Computing combined with Machine Learning. 
 %
 Indeed, this could be used in the work already 
- explore to extract a representation of the local state agent 
- --- that, in fact, we found particularly hard using hand-craft solutions. 
+ explored to extract a representation of the local state agent 
+ --- that, in fact, I found particularly hard using hand-craft solutions. 
 
 \section{Talks}
 \begin{enumerate}
-	\item Towards Reinforcement Learning-based Aggregate Computing @ COORDINATION 2022
-	\item Machine Learning for Aggregate Computing: a Research Roadmap @ DISCOLI 2022
-	\item Addressing Collective Computations Efficiency: Towards a Platform-level Reinforcement Learning Approach @ ACSOS 2022
+	\item Towards Reinforcement Learning-based Aggregate Computing @ COORDINATION 2022, 13 - 17 June 2022, Lucca
+	\item Machine Learning for Aggregate Computing: a Research Roadmap @ DISCOLI 2022, 10 - 13 July 2022, Bologna
+	\item Addressing Collective Computations Efficiency: Towards a Platform-level Reinforcement Learning Approach @ ACSOS 2022, 19 - 23 September 2022, Online
 \end{enumerate}
 \section{International Conference Activities}
 \begin{enumerate}
@@ -282,8 +281,8 @@ Indeed, this could be used in the work already
 \end{enumerate}
 \section{Teaching}
 \begin{enumerate}
-	\item Tutor @ Padigmi di Progettazione e Sviluppo (PPS)
-	\item Tutor @ Programmazione Concorrente e Distribuita (PCD)
+	\item Tutor @ Padigmi di Progettazione e Sviluppo (PPS), Ingegneria e Scienze Informatiche, 30 ore
+	\item Tutor @ Programmazione Concorrente e Distribuita (PCD), Ingegneria e Scienze Informatiche, 30 ore
 	\item Seminar entitled ``Scala: a Cross-Platform Language'' @ PPS
 	\item Seminar entitled ``Scala(e) to the large. Concurrent programming in Scala and relevant Frameworks'' @ PPS
 	\item Seminar entitled ``Akka: An introduction'' @ PCD
@@ -333,6 +332,6 @@ Indeed, this could be used in the work already
 	\\{\footnotesize\textbf{Abstract:} \citefield{domains}{abstract}}
 \end{itemize}
 \section{References}
-\printbibliography[heading=none, check=other]
+\printbibliography[heading=none]
 
 \end{document}
